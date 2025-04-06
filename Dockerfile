@@ -12,7 +12,8 @@ COPY pom.xml .
 COPY src ./src
 
 RUN chmod +x mvnw
-RUN ./mvnw -B package -DskipTests
+RUN apt-get update && apt-get install -y maven
+RUN mvn -B package -DskipTests
 
 # Runtime stage
 FROM eclipse-temurin:21.0.5_11-jre-alpine@sha256:4300bfe1e11f3dfc3e3512f39939f9093cf18d0e581d1ab1ccd0512f32fe33f0
