@@ -31,6 +31,11 @@ public class UserController{
         return ResponseEntity.status(200).body("Welcome to User Service");
     }
 
+    @GetMapping("/welcome1")
+    public ResponseEntity<String> welcome1() {
+        return ResponseEntity.status(200).body("Welcome to User Service 1");
+    }
+
     private static final String CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final String[] DOMAINS = {"gmail.com", "yahoo.com", "outlook.com", "example.com"};
 
